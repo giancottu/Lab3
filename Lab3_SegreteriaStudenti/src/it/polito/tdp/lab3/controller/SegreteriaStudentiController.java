@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import it.polito.tdp.lab3.db.CorsoDAO;
+import it.polito.tdp.lab3.model.SegreteriaStudentiModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -18,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 
 		private List<String> corsi = new LinkedList<String>();
 		private CorsoDAO dao = new CorsoDAO();
+		private SegreteriaStudentiModel model;
 		
 	    @FXML
 	    private ResourceBundle resources;
@@ -75,6 +77,11 @@ import javafx.scene.input.MouseEvent;
 	        corsi.addAll(dao.elencoCorsi());
 	        cmbCorso.getItems().addAll(corsi);
 	    }
+
+		public void setModel(SegreteriaStudentiModel model) {
+			this.model = model;
+			
+		}
 	    
 }
 
